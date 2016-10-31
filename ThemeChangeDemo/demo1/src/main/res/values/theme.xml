@@ -1,0 +1,33 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@color/s0</item>
+        <item name="android:windowAnimationStyle">@style/noAnimation</item>
+    </style>
+
+    <style name="DayNightTheme" parent="AppTheme" >
+        <item name="s0">@color/s0</item>
+        <item name="s1">@color/s1</item>
+        <item name="s2">@color/s2</item>
+        <item name="s3">@color/s3</item>
+        <item name="s4">@color/s4</item>
+
+        <item name="mainBackground">@color/s0</item>
+        <item name="btnBackground">@drawable/bg_btn</item>
+        <item name="image">@mipmap/image</item>
+        <item name="btnStr">@string/btn_text</item>
+    </style>
+
+    <style name="DayNightTheme.Night">
+        <item name="s1">@color/s1_night</item>
+        <item name="s2">@color/s2_night</item>
+        <item name="s3">@color/s3_night</item>
+        <item name="s4">@color/s4_night</item>
+
+        <item name="mainBackground">@color/s0_night</item>
+        <item name="btnBackground">@drawable/bg_btn_night</item>
+        <item name="image">@mipmap/image_night</item>
+        <item name="btnStr">@string/btn_text_night</item>
+    </style>
+
+</resources>

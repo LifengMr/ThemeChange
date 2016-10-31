@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Demo3</string>
+    <string name="btn_text">切换夜间</string>
+    <string name="btn_text_night">切换日间</string>
+</resources>

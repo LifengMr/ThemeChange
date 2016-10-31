@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Demo2</string>
+    <string name="btn_text">切换夜间</string>
+</resources>

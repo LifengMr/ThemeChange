@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Demo4</string>
+    <string name="btn_text">切换夜间</string>
+    <string name="download_start">开始下载</string>
+    <string name="download_ing">下载中</string>
+    <string name="download_pause">暂停下载</string>
+    <string name="download_stop">停止下载</string>
+    <string name="download_error">下载错误</string>
+    <string name="request_theme_error">加载主题失败</string>
+</resources>

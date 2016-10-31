@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="s0">#ffffff</color>
+    <color name="s1">#333333</color>
+    <color name="s2">#666666</color>
+    <color name="s3">#999999</color>
+    <color name="s4">#ff819f</color>
+
+    <color name="s0_night">#999999</color>
+    <color name="s1_night">#5c6266</color>
+    <color name="s2_night">#404651</color>
+    <color name="s3_night">#404651</color>
+    <color name="s4_night">#854656</color>
+</resources>

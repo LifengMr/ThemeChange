@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="DayNightTheme">
+        <attr name="s0" format="reference|color" />
+        <attr name="s1" format="reference|color" />
+        <attr name="s2" format="reference|color" />
+        <attr name="s3" format="reference|color" />
+        <attr name="s4" format="reference|color" />
+
+        <attr name="mainBackground" format="color" />
+        <attr name="btnBackground" format="color" />
+        <attr name="image" format="reference" />
+        <attr name="btnStr" format="string" />
+    </declare-styleable>
+</resources>
