@@ -4,7 +4,7 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
-    <com.ss.android.theme.demo4.widget.DownloadButton
+    <Button
         android:id="@+id/btn"
         android:layout_width="wrap_content"
         android:layout_centerHorizontal="true"

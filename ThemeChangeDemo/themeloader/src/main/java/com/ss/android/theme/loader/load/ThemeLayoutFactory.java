@@ -24,17 +24,12 @@ public class ThemeLayoutFactory implements LayoutInflater.Factory {
 
     @Override
     public View onCreateView(String name, Context context, AttributeSet attributeSet) {
-
-        JLog.i(TAG, "onCreateView name=" + name);
         View view = null;
-
         try {
             view = createView(name, context, attributeSet);
         } catch (Exception e) {
-            JLog.i(TAG, "onCreateView e=" + e.getMessage());
         }
 
-        JLog.i(TAG, "onCreateView view=" + view);
         parseAttrs(context, view, attributeSet);
 
         return view;
@@ -61,7 +56,6 @@ public class ThemeLayoutFactory implements LayoutInflater.Factory {
     }
 
     public void apply() {
-        JLog.i("clf", "onThemeChanged mViewEntities=" + mViewEntities);
         if (JavaHelper.isListEmpty(mViewEntities)) {
             return;
         }

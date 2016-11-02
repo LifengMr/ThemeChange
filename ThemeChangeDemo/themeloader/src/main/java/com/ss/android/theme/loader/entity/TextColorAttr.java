@@ -13,6 +13,7 @@ public class TextColorAttr extends BaseAttr {
 
     public static final String TAG = TextColorAttr.class.getName();
 
+    //TextColorAttr
     @Override
     public void apply(View view) {
         JLog.i(TAG, "TextColorAttr view=" + view);

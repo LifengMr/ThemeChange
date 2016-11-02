@@ -47,12 +47,12 @@ public class ThemeRes {
         return resId;
     }
 
-    public static String getString(Context context, int id, boolean night) {
-        return context.getString(getId(id, night));
-    }
-
     public static int getColor(Context context, int id, boolean night) {
         return context.getResources().getColor(getId(id, night));
+    }
+
+    public static String getString(Context context, int id, boolean night) {
+        return context.getString(getId(id, night));
     }
 
     public static ColorStateList getColorStateList(Context context, int id, boolean night) {

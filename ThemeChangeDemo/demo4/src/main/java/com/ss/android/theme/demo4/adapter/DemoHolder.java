@@ -2,9 +2,10 @@ package com.ss.android.theme.demo4.adapter;
 
 import android.content.Context;
 import android.view.View;
+import android.widget.Button;
 
 import com.ss.android.theme.demo4.R;
-import com.ss.android.theme.demo4.widget.DownloadButton;
+import com.ss.android.theme.loader.download.DownLoadListener;
 import com.ss.android.theme.loader.download.DownLoadManager;
 import com.ss.android.theme.loader.entity.ApkEntity;
 import com.ss.android.theme.loader.load.ThemeLoader;
@@ -12,10 +13,10 @@ import com.ss.android.theme.loader.load.ThemeLoader;
 /**
  * Created by chenlifeng on 16/10/28.
  */
-public class DemoHolder implements View.OnClickListener {
+public class DemoHolder implements View.OnClickListener, DownLoadListener {
 
     private View mRootView;
-    private DownloadButton mButton;
+    private Button mButton;
 
     private Context mContext;
     private ApkEntity mTheme;
@@ -28,7 +29,7 @@ public class DemoHolder implements View.OnClickListener {
     }
 
     private void initViews() {
-        mButton = (DownloadButton) mRootView.findViewById(R.id.btn);
+        mButton = (Button) mRootView.findViewById(R.id.btn);
     }
 
     public void bind(ApkEntity entity) {
@@ -37,10 +38,9 @@ public class DemoHolder implements View.OnClickListener {
         }
         mTheme = entity;
         mButton.setText(entity.title);
-        mButton.setDefaultText(entity.title);
         mButton.setOnClickListener(this);
 
-        DownLoadManager.ins().addTaskListener(entity.packageName, mButton);
+        DownLoadManager.ins().addTaskListener(entity.packageName, this);
     }
 
     public void unBind() {
@@ -62,9 +62,38 @@ public class DemoHolder implements View.OnClickListener {
                     }
                 } else {
                     themeLoader.downloadTheme(mTheme);
-                    DownLoadManager.ins().addTaskListener(mTheme.packageName, mButton);
+                    DownLoadManager.ins().addTaskListener(mTheme.packageName, this);
                 }
             }
+        }
+    }
+
+    @Override
+    public void onStart(String taskID) {
+        mButton.setText(mContext.getString(R.string.download_start));
+    }
+
+    @Override
+    public void onProgress(ApkEntity downLoadInfo) {
+        float percent = 1.0f * downLoadInfo.downloadSize / downLoadInfo.fileSize;
+        String text = mContext.getString(R.string.download_ing) + "(" + (int)(percent * 100) + "%)";
+//        mButton.setText(text);
+    }
+
+    @Override
+    public void onStop(String taskID) {
+        mButton.setText(mContext.getString(R.string.download_stop));
+    }
+
+    @Override
+    public void onError(ApkEntity downLoadInfo) {
+        mButton.setText(mContext.getString(R.string.download_error));
+    }
+
+    @Override
+    public void onSuccess(ApkEntity downLoadInfo) {
+        if (mTheme != null) {
+            mButton.setText(mTheme.title);
         }
     }
 }
